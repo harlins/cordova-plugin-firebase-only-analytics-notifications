@@ -46,8 +46,9 @@ module.exports = function(context) {
   }
   
   var destFolder = path.join(context.opts.projectRoot, platformConfig.getSoundDestinationFolder(context));
-  console.log(destFolder);
-  utils.createOrCheckIfFolderExists(destFolder);
+  //utils.createOrCheckIfFolderExists(destFolder);
+  utils.createOrCheckIfFolderExists(path.join(context.opts.projectRoot,"platforms", "android", "res"));
+  utils.createOrCheckIfFolderExists(path.join(context.opts.projectRoot,"platforms", "android", "res", "raw"));
   
   var sourceFilePath = path.join(targetPath, path.basename(soundFile))
   var destFilePath = path.join(destFolder, path.basename(soundFile));

@@ -45,7 +45,8 @@ module.exports = function(context) {
     return defer.promise;
   }
   
-  var destFolder = platformConfig.getSoundDestinationFolder(context);
+  var destFolder = path.join(context.opts.projectRoot, platformConfig.getSoundDestinationFolder(context));
+  console.log(destFolder);
   utils.createOrCheckIfFolderExists(destFolder);
   
   var sourceFilePath = path.join(targetPath, path.basename(soundFile))

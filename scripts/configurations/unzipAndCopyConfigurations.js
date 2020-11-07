@@ -52,13 +52,16 @@ module.exports = function(context) {
 
   var sourceFilePath = path.join(targetPath, fileName);
   var destFilePath = path.join(context.opts.plugin.dir, fileName);
+  console.log(destFilePath);
 
   utils.copyFromSourceToDestPath(defer, sourceFilePath, destFilePath);
 
   if (cordovaAbove7) {
     var destPath = path.join(context.opts.projectRoot, "platforms", platform, "app");
+    console.log(destPath);
     if (utils.checkIfFolderExists(destPath)) {
       var destFilePath = path.join(destPath, fileName);
+      console.log(destFilePath);
       utils.copyFromSourceToDestPath(defer, sourceFilePath, destFilePath);
     }
   }

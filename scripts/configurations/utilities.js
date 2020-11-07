@@ -75,8 +75,9 @@ function getSourceFolderPath(context, wwwPath) {
 }
 
 function getResourcesFolderPath(context, platform, platformConfig) {
-  var platformPath = path.join(context.opts.projectRoot, constants.platforms, platform);
-  return path.join(platformPath, platformConfig.wwwFolder);
+  
+  //var platformPath = path.join(context.opts.projectRoot, constants.platforms, platform);
+  return path.join(context.opts.projectRoot, "www");
 }
 
 function getPlatformConfigs(platform) {
